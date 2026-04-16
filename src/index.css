@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@theme {
+    /* Colors Define Karo */
+    --color-forest-950: #0a1f0e;
+    --color-forest-900: #0f2d14;
+    --color-forest-800: #163d1c;
+    --color-forest-700: #1e5228;
+    --color-forest-600: #276a34;
+    --color-forest-500: #2f8040;
+    --color-forest-400: #3d9e52;
+    --color-forest-300: #5bb96b;
+    --color-forest-200: #8ed49a;
+    --color-forest-100: #c4eacb;
+    --color-forest-50: #eaf7ec;
+
+    --color-gold-600: #b8860b;
+    --color-gold-500: #d4a017;
+    --color-gold-400: #f5c842;
+    --color-gold-300: #f7d46a;
+    --color-gold-200: #fae49a;
+    --color-gold-100: #fdf2cb;
+
+    --color-dirt-900: #2c1a0e;
+    --color-dirt-700: #6b3a1f;
+    --color-dirt-500: #a0552e;
+    --color-dirt-300: #d4956a;
+    --color-dirt-100: #f5ddc9;
+
+    /* Fonts */
+    --font-display: Georgia, Cambria, serif;
+    --font-body: "Trebuchet MS", sans-serif;
+
+    /* Animations */
+    --animate-slide-up: slideUp 0.7s ease forwards;
+    --animate-fade-in: fadeIn 0.8s ease forwards;
+    --animate-float: float 3s ease-in-out infinite;
+
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(28px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes float {
+
+        0%,
+        100% {
+            transform: translateY(0px);
+        }
+
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+}
+
+@layer base {
+    * {
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background-color: var(--color-forest-950);
+        color: var(--color-forest-50);
+        font-family: var(--font-body);
+        -webkit-font-smoothing: antialiased;
+    }
+}
+
+@utility grass-bg {
+    background-image: repeating-linear-gradient(168deg, transparent, transparent 22px,
+            rgba(255, 255, 255, 0.012) 22px, rgba(255, 255, 255, 0.012) 44px);
+}
+
+@utility diamond-bg {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5l25 25-25 25L5 30z' fill='none' stroke='rgba(255,255,255,0.05)' stroke-width='1'/%3E%3C/svg%3E");
+}
+
+@utility card-glass {
+    background: rgba(22, 61, 28, 0.55);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+}
